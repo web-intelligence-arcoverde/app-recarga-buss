@@ -1,0 +1,20 @@
+{
+  "presets": ["module:metro-react-native-babel-preset"],
+  "plugins": [
+    [
+      "babel-plugin-inline-import",
+      {
+        "extensions": [".svg"]
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "components": "./src/components/"
+        },
+        "cwd": "packagejson"
+      }
+    ]
+  ]
+}

@@ -1,0 +1,4 @@
+- adicionar ts
+- importar imagens
+- organizar cores
+- adicionar responsividade[https://www.youtube.com/watch?v=-OTElzaZJ3Y&ab_channel=ABCODES]

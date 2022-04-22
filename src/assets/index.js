@@ -1,0 +1,31 @@
+import ArrowLeft from './icons/arrow-left.svg';
+import ArrowRight from './icons/arrow-right.svg';
+import Ticket from './icons/ticket.svg';
+import Cancel from './icons/cancel.svg';
+import Card from './icons/card.svg';
+import CheckCircle from './icons/check_circle.svg';
+import EyeClose from './icons/eye-close.svg';
+import EyeOpen from './icons/eye-open.svg';
+import History from './icons/history.svg';
+import Home from './icons/home.svg';
+import Pix from './icons/pix.svg';
+import Leave from './icons/leave.svg';
+import Tariff from './icons/tariff.svg';
+import Time from './icons/time.svg';
+
+export const Icons = {
+  'arrow-left': ArrowLeft,
+  'arrow-right': ArrowRight,
+  'ticket-icon': Ticket,
+  'cancel-icon': Cancel,
+  'card-icon': Card,
+  'check-circle': CheckCircle,
+  'eye-close': EyeClose,
+  'eye-open': EyeOpen,
+  'history-icon': History,
+  'home-icon': Home,
+  'pix-icon': Pix,
+  'leave-icon': Leave,
+  'tariff-icon': Tariff,
+  'time-icon': Time,
+};

@@ -1,0 +1,49 @@
+export const COLORS = {
+  'green-light': '#BEDDC3',
+  'green-default': '#4EA45D',
+  'green-dark': '#1C3B22',
+  'green-800': '#2A2B2B',
+
+  'white-light': '#FAFCFB',
+  'white-default': '#F2F7F4',
+  'white-dark': '#E9F0EB',
+
+  'gray-100': '#5E6361',
+  'gray-200': '#555957',
+  'gray-300': '#4E5250',
+  'gray-400': '#474A48',
+  'gray-500': '#404241',
+  'gray-600': '#393B3A',
+  'gray-700': '#323332',
+  'gray-800': '#2A2B2B',
+
+  'red-light': '#DEBFBF',
+  'red-default': '#A44E4E',
+  'red-dark': '#3B1C1C',
+  'yellow-light': '#D9CC9E',
+  'yellow-default': '#D2AE2E',
+  'yellow-dark': '#534923',
+};
+
+export const Typography = {
+  h1: {
+    fontSize: '32px',
+    fontWight: 700,
+    lineHeight: '41.6px',
+    fontFamily: 'DMSans-Regular',
+  },
+  h2: {fontSize: '24px', fontWight: 700, lineHeight: '25.2px'},
+  h3: {fontSize: '18px', fontWight: 500, lineHeight: '18.9px'},
+  body1: {fontSize: '14px', fontWight: 400, lineHeight: '22.4px'},
+  body2: {fontSize: '12px', fontWight: 400, lineHeight: '19.8px'},
+  body3: {fontSize: '10px', fontWight: 400, lineHeight: '16.5px'},
+};
+
+export const Fonts = {
+  bold: 'DMSans-Bold',
+  boldItalic: 'DMSans-BoldItalic',
+  italic: 'DMSans-Italic',
+  medium: 'DMSans-Medium',
+  mediumItalic: 'DMSans-MediumItalic',
+  regular: 'DMSans-Regular',
+};
