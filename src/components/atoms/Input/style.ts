@@ -27,7 +27,13 @@ export const InputContainer = styled.View`
   width: 100%;
   height: 52px;
   background: ${COLORS['white-light']};
-  border: 1px solid #e9f0eb;
+
+  border-color: ${({borderColor}) =>
+    borderColor ? `${COLORS[borderColor]}` : `${COLORS['white-dark']}`};
+  border-style: solid;
+  border-width: ${({borderWidth}) =>
+    borderWidth ? `${borderWidth}px` : `1px`};
+
   border-radius: 6px;
   padding: 18px;
 `;

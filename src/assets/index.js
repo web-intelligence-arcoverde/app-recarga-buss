@@ -6,6 +6,7 @@ import Card from './icons/card.svg';
 import CheckCircle from './icons/check_circle.svg';
 import EyeClose from './icons/eye-close.svg';
 import EyeOpen from './icons/eye-open.svg';
+import EyeOpenError from './icons/eye-open-error.svg';
 import History from './icons/history.svg';
 import Home from './icons/home.svg';
 import Pix from './icons/pix.svg';
@@ -22,6 +23,7 @@ export const Icons = {
   'check-circle': CheckCircle,
   'eye-close': EyeClose,
   'eye-open': EyeOpen,
+  'eye-open-error': EyeOpenError,
   'history-icon': History,
   'home-icon': Home,
   'pix-icon': Pix,

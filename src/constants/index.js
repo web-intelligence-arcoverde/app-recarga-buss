@@ -32,11 +32,36 @@ export const Typography = {
     lineHeight: '41.6px',
     fontFamily: 'DMSans-Regular',
   },
-  h2: {fontSize: '24px', fontWight: 700, lineHeight: '25.2px'},
-  h3: {fontSize: '18px', fontWight: 500, lineHeight: '18.9px'},
-  body1: {fontSize: '14px', fontWight: 400, lineHeight: '22.4px'},
-  body2: {fontSize: '12px', fontWight: 400, lineHeight: '19.8px'},
-  body3: {fontSize: '10px', fontWight: 400, lineHeight: '16.5px'},
+  h2: {
+    fontFamily: 'DMSans-Bold',
+    fontSize: '24px',
+    fontWight: 700,
+    lineHeight: '25.2px',
+  },
+  h3: {
+    fontFamily: 'DMSans-Regular',
+    fontSize: '18px',
+    fontWight: 500,
+    lineHeight: '18.9px',
+  },
+  body1: {
+    fontFamily: 'DMSans-Regular',
+    fontSize: '14px',
+    fontWight: 400,
+    lineHeight: '22.4px',
+  },
+  body2: {
+    fontFamily: 'DMSans-Regular',
+    fontSize: '12px',
+    fontWight: 400,
+    lineHeight: '19.8px',
+  },
+  body3: {
+    fontFamily: 'DMSans-Regular',
+    fontSize: '10px',
+    fontWight: 400,
+    lineHeight: '16.5px',
+  },
 };
 
 export const Fonts = {
