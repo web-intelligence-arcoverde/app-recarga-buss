@@ -15,7 +15,13 @@ import {useForm} from 'react-hook-form';
 
 const schema = yup
   .object({
-    email: yup.string().email(messages.email).required(messages.required),
+    cpf: yup
+      .string()
+      .required(messages.required)
+      .matches(
+        /^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$/,
+        'Informe um CPF valido',
+      ),
     password: yup
       .string()
       .min(6, messages.min6)
@@ -24,7 +30,7 @@ const schema = yup
   })
   .required();
 
-function SignIn() {
+function SignIn({navigation}) {
   const {
     setValue,
     handleSubmit,
@@ -35,64 +41,62 @@ function SignIn() {
   });
 
   useEffect(() => {
-    register('email');
+    register('cpf');
     register('password');
   }, [register]);
 
   return (
-    <Container justify="center" align="center">
+    <Container justify="center" align="center" padding={30}>
       <Label color="green-dark">Recardbus</Label>
 
       <View style={{padding: 26}} />
 
-      <StyledContainer width={84}>
-        <TextInput
-          label="CPF (Somente números)"
-          onChangeText={(text) => setValue('email', text)}
-          error={errors?.email}
-        />
+      <TextInput
+        label="CPF (Somente números)"
+        onChangeText={(text) => setValue('cpf', text)}
+        error={errors?.cpf}
+      />
 
-        <View style={{padding: 8}} />
+      <View style={{padding: 8}} />
 
-        <TextInput
-          secureTextEntry={true}
-          onChangeText={(text) => setValue('password', text)}
-          error={errors?.password}
-        />
+      <TextInput
+        label="SENHA"
+        secureTextEntry={true}
+        onChangeText={(text) => setValue('password', text)}
+        error={errors?.password}
+      />
 
-        <View style={{padding: 4}} />
+      <View style={{padding: 4}} />
 
-        <StyledContainer align="flex-end">
-          <ButtonText onPress={() => console.log('exemple')}>
-            Esqueceu a senha?
-          </ButtonText>
-        </StyledContainer>
+      <StyledContainer align="flex-end">
+        <ButtonText onPress={() => navigation.navigate('Recovery')}>
+          Esqueceu a senha?
+        </ButtonText>
+      </StyledContainer>
 
-        <View style={{padding: 12}} />
+      <View style={{padding: 12}} />
 
-        <Button
-          name="Exemple"
-          onPress={handleSubmit((data) => {
-            console.log(data);
-          })}>
-          Entrar
-        </Button>
+      <Button
+        onPress={handleSubmit((data) => {
+          console.log(data);
+        })}>
+        Entrar
+      </Button>
 
-        <View style={{padding: 20}} />
+      <View style={{padding: 20}} />
 
-        <StyledContainer align="center">
-          <Label color="gray-400" variant="body1">
-            Ainda não possui uma conta?
-          </Label>
+      <StyledContainer align="center">
+        <Label color="gray-400" variant="body1">
+          Ainda não possui uma conta?
+        </Label>
 
-          <View style={{padding: 6}} />
+        <View style={{padding: 6}} />
 
-          <ButtonText
-            color="green-default"
-            onPress={() => console.log('exemple')}>
-            Crie uma agora
-          </ButtonText>
-        </StyledContainer>
+        <ButtonText
+          color="green-default"
+          onPress={() => navigation.navigate('SignUp')}>
+          Crie uma agora
+        </ButtonText>
       </StyledContainer>
     </Container>
   );

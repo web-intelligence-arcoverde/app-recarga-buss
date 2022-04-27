@@ -14,6 +14,8 @@ import Leave from './icons/leave.svg';
 import Tariff from './icons/tariff.svg';
 import Time from './icons/time.svg';
 
+import ArrowLeftGreen from './icons/arrow-left-green.svg';
+
 export const Icons = {
   'arrow-left': ArrowLeft,
   'arrow-right': ArrowRight,
@@ -30,4 +32,5 @@ export const Icons = {
   'leave-icon': Leave,
   'tariff-icon': Tariff,
   'time-icon': Time,
+  'arrow-left-green': ArrowLeftGreen,
 };

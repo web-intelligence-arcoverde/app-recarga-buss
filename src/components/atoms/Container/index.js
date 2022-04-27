@@ -19,6 +19,8 @@ export const Container = styled.KeyboardAvoidingView`
     color ? `${COLORS[color]}` : COLORS['white-default']};
   justify-content: ${({justify}) => (justify ? justify : 'flex-start')};
   align-items: ${({align}) => (align ? align : 'flex-start')};
+
+  padding: ${({padding}) => (padding ? padding : 0)}px;
 `;
 
 export const LinearGradientContainer = styled(LinearGradient).attrs({
