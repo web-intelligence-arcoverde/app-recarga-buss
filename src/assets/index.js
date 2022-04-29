@@ -16,6 +16,10 @@ import Time from './icons/time.svg';
 
 import ArrowLeftGreen from './icons/arrow-left-green.svg';
 
+import Pending from './icons/pending.svg';
+import Confirmation from './icons/confirmation.svg';
+import CancelPayment from './icons/cancel_payment.svg';
+
 export const Icons = {
   'arrow-left': ArrowLeft,
   'arrow-right': ArrowRight,
@@ -33,4 +37,7 @@ export const Icons = {
   'tariff-icon': Tariff,
   'time-icon': Time,
   'arrow-left-green': ArrowLeftGreen,
+  'pending-icon': Pending,
+  'cancel-payment-icon': CancelPayment,
+  'confirmation-payment-icon': Confirmation,
 };

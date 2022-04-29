@@ -75,9 +75,7 @@ const Card = ({text, value, type}: any) => {
       </Label>
       <View style={{padding: 4}} />
       <Label color="white-default" variant="h2">
-        {type === 'money'
-          ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-          : value}
+        {type === 'money' ? `R$${value}` : value}
       </Label>
     </StyledContainer>
   );

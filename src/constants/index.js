@@ -62,6 +62,13 @@ export const Typography = {
     fontWight: 400,
     lineHeight: '16.5px',
   },
+
+  body4: {
+    fontFamily: 'DMSans-Medium',
+    fontSize: '16px',
+    fontWight: 500,
+    lineHeight: '17.2px',
+  },
 };
 
 export const Fonts = {

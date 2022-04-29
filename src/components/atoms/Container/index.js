@@ -11,6 +11,8 @@ export const StyledContainer = styled.View`
   align-items: ${({align}) => (align ? align : 'flex-start')};
   width: ${({width}) => (width ? width : '100')}%;
 
+  height: ${({height}) => (height ? `${height}%` : 'auto')};
+
   padding: ${({padding}) => (padding ? padding : 0)}px;
   border-radius: ${({radius}) => (radius ? radius : 0)}px;
 `;
