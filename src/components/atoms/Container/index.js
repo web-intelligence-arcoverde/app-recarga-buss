@@ -10,6 +10,9 @@ export const StyledContainer = styled.View`
   justify-content: ${({justify}) => (justify ? justify : 'flex-start')};
   align-items: ${({align}) => (align ? align : 'flex-start')};
   width: ${({width}) => (width ? width : '100')}%;
+
+  padding: ${({padding}) => (padding ? padding : 0)}px;
+  border-radius: ${({radius}) => (radius ? radius : 0)}px;
 `;
 
 export const Container = styled.KeyboardAvoidingView`

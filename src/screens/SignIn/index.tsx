@@ -79,6 +79,7 @@ function SignIn({navigation}) {
       <Button
         onPress={handleSubmit((data) => {
           console.log(data);
+          navigation.navigate('Dashboard');
         })}>
         Entrar
       </Button>
