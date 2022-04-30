@@ -36,6 +36,7 @@ function SignIn({navigation}) {
     handleSubmit,
     register,
     formState: {errors},
+    reset,
   } = useForm({
     resolver: yupResolver(schema),
   });

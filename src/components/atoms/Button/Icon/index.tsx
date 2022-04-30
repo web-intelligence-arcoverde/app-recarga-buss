@@ -10,12 +10,16 @@ const IconButton = ({
   disabled,
   width,
   height,
+  padding,
+  radius,
 }: any) => {
   return (
     <Button
       onPress={() => onPress()}
       background={background}
-      disabled={disabled}>
+      disabled={disabled}
+      padding={padding}
+      radius={radius}>
       <Icon icon={icon} width={width} height={height} />
     </Button>
   );

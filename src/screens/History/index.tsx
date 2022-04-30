@@ -6,7 +6,7 @@ import Label from '../../components/atoms/Label';
 import {Container, StyledContainer} from '../../components/atoms/Container';
 import {COLORS} from '../../constants';
 
-import {View} from 'react-native';
+import {View, ScrollView} from 'react-native';
 
 import Icon from '../../components/atoms/Icon';
 import IconButton from '../../components/atoms/Button/Icon';
@@ -61,23 +61,16 @@ const STATUS = [
 
 function Home({navigation}) {
   return (
-    <Container padding={30}>
-      <StyledContainer direction="row" align="center">
-        <IconButton
-          icon="arrow-left-green"
-          width={21}
-          height={21}
-          onPress={() => navigation.goBack()}
-        />
-        <View style={{padding: 14}} />
-        <Label color="green-dark">Historico</Label>
-      </StyledContainer>
+    <Container>
+      <Label color="green-dark" variant="h2">
+        Historico
+      </Label>
 
-      <View style={{padding: 14}} />
+      <View style={{padding: 8}} />
 
       <HeaderPurchasesHistory />
 
-      <View style={{padding: 12}} />
+      <View style={{padding: 8}} />
 
       <ShoppingListHistory />
     </Container>
@@ -88,22 +81,22 @@ const ShoppingListHistory = () => {
   const ListPaymentsHistory = HistoryPayments.map((item) => {
     return (
       <>
-        <CardItemHistoryShopping item={item} key={item.id} />
+        <CardItemHistoryShopping item={item} key={item.date} />
         <View style={{padding: 8}} />
       </>
     );
   });
 
-  return (
-    <StyledContainer color="white-default">
-      {ListPaymentsHistory}
-    </StyledContainer>
-  );
+  return <ScrollView>{ListPaymentsHistory}</ScrollView>;
 };
 
 const CardItemHistoryShopping = ({item}) => {
   return (
-    <StyledContainer direction="row" padding={16} color="white-light">
+    <StyledContainer
+      direction="row"
+      padding={16}
+      color="white-light"
+      width={90}>
       <View
         style={{
           width: 64,

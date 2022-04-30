@@ -10,10 +10,14 @@ import {COLORS} from '../constants';
 import Home from '../screens/Home';
 import SignIn from '../screens/SignIn/index';
 import SignUp from '../screens/SignUp/index';
+import SignOut from '../screens/SignOut';
 
 import Dashboard from '../screens/Dashboard';
-import History from '../screens/History';
+import History from '../screens/PurchasePass';
 import Tariff from '../screens/Tariff';
+
+import {useDispatch} from 'react-redux';
+import {openModalSignOut} from '../store/modules/navigation/actions';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -32,6 +36,8 @@ const Routes = () => {
 };
 
 function BottomNavigator() {
+  const disaptch = useDispatch();
+
   return (
     <Tab.Navigator
       initialRouteName="Inicio"
@@ -54,7 +60,7 @@ function BottomNavigator() {
         component={History}
         options={{
           tabBarIcon: () => (
-            <IconTabBottom icon="history-icon" label="historico" />
+            <IconTabBottom icon="history-icon" label="recarga" />
           ),
         }}
       />
@@ -69,14 +75,26 @@ function BottomNavigator() {
       />
       <Tab.Screen
         name="Sair"
-        component={Dashboard}
+        component={SignOut}
         options={{
-          tabBarIcon: () => <IconTabBottom icon="leave-icon" label="sair" />,
+          tabBarIcon: (props) => (
+            <IconTabBottom icon="leave-icon" label="sair" />
+          ),
         }}
+        listeners={({navigation}) => ({
+          tabPress: (e) => {
+            e.preventDefault();
+            disaptch(openModalSignOut());
+          },
+        })}
       />
     </Tab.Navigator>
   );
 }
+
+const openModal = () => {
+  return null;
+};
 
 const IconTabBottom = ({icon, label}) => {
   return (
