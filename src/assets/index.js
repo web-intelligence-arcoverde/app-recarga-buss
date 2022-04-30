@@ -20,6 +20,8 @@ import Pending from './icons/pending.svg';
 import Confirmation from './icons/confirmation.svg';
 import CancelPayment from './icons/cancel_payment.svg';
 
+import CreditCard from './icons/payment.svg';
+
 export const Icons = {
   'arrow-left': ArrowLeft,
   'arrow-right': ArrowRight,
@@ -40,4 +42,5 @@ export const Icons = {
   'pending-icon': Pending,
   'cancel-payment-icon': CancelPayment,
   'confirmation-payment-icon': Confirmation,
+  'credit-card-icon': CreditCard,
 };

@@ -7,15 +7,31 @@ import Label from '../../atoms/Label';
 import Button from '../../atoms/Button/Contained';
 
 import QRCode from 'react-native-qrcode-svg';
+import {StyledContainer} from '../../atoms/Container';
 
-export default function ContainerBarCode({visible, onPess}) {
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  closeModalQrCodePix,
+  openModalQrCodePix,
+} from '../../../store/modules/pruchase/actions';
+
+export default function ContainerBarCode() {
+  const pixCode = '111.185.464-58';
+
+  const visible = useSelector((state) => state.purchase.visible_modal_pix);
+  const dispatch = useDispatch();
+
+  const close = () => {
+    dispatch(closeModalQrCodePix());
+  };
+
   return (
     <View>
       <Modal
         isVisible={visible}
         swipeDirection="down"
         style={{margin: 0}}
-        propagateSwipe
+        backdropOpacity={0.3}
         style={{
           justifyContent: 'flex-end',
           margin: 0,
@@ -23,7 +39,7 @@ export default function ContainerBarCode({visible, onPess}) {
         }}>
         <View
           style={{
-            flex: 0.4,
+            flex: 0.5,
             backgroundColor: COLORS['white-default'],
             justifyContent: 'center',
             borderTopLeftRadius: 32,
@@ -34,22 +50,28 @@ export default function ContainerBarCode({visible, onPess}) {
             QrCode
           </Label>
 
-          <View style={{padding: 10}} />
+          <View style={{padding: 14}} />
 
-          <QRCode
-            value={'NA'}
-            size={250}
-            color="black"
-            backgroundColor="white"
-            logoSize={30}
-            logoMargin={2}
-            logoBorderRadius={15}
-            logoBackgroundColor="yellow"
-          />
+          <StyledContainer justify="center" align="center">
+            <QRCode
+              value={pixCode}
+              size={180}
+              color="black"
+              backgroundColor="white"
+              logoSize={30}
+              logoMargin={2}
+              logoBorderRadius={15}
+              logoBackgroundColor="yellow"
+            />
+            <View style={{padding: 6}} />
+            <Label color="gray-800" variant="body1">
+              {pixCode}
+            </Label>
+          </StyledContainer>
 
           <View style={{padding: 20}} />
 
-          <Button onPress={onPess}>Copia código</Button>
+          <Button onPress={close}>Copiar chave</Button>
         </View>
       </Modal>
     </View>

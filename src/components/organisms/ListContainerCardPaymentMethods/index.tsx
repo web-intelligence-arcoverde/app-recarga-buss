@@ -3,9 +3,18 @@ import {StyledContainer} from '../../atoms/Container';
 import CardPaymentMethod from '../../molecules/CardPaymentMethods';
 
 const methodsPayments = [
-  {icon: 'pix-icon', text: 'PIX'},
-  {icon: 'card-icon', text: 'Cartão'},
-  {icon: 'ticket-icon', text: 'Boleto', openBarCode: true},
+  {
+    icon: 'pix-icon',
+    text: 'PIX',
+  },
+  {
+    icon: 'card-icon',
+    text: 'Cartão',
+  },
+  {
+    icon: 'ticket-icon',
+    text: 'Boleto',
+  },
 ];
 
 const ListContainerCardPaymentMethods = () => {
@@ -19,7 +28,6 @@ const ListContainerCardPaymentMethods = () => {
         key={method.icon}
         selected={selectedCard === method.text}
         changerSelected={setSelectedCard}
-        visibleModal={method?.openBarCode}
       />
     );
   });

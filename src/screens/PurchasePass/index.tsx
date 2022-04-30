@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {View} from 'react-native';
 
@@ -7,12 +7,15 @@ import {Container, StyledContainer} from '../../components/atoms/Container';
 
 import TextInput from '../../components/atoms/Input';
 import Button from '../../components/atoms/Button/Contained';
-import IconButton from '../../components/atoms/Button/Icon';
 import ListContainerCardPaymentMethods from '../../components/organisms/ListContainerCardPaymentMethods';
+import {COLORS} from '../../constants';
 
-import ContainerCardPayment from '../../components/organisms/ContainerCardPayment';
+import Icon from '../../components/atoms/Icon';
 
 const PurchasePass = ({navigation}) => {
+  const [passAmount, setPassAmount] = useState(0);
+  const pricePassSingle = 1.35;
+
   return (
     <Container padding={30}>
       <StyledContainer direction="row" align="center">
@@ -21,25 +24,37 @@ const PurchasePass = ({navigation}) => {
         </Label>
       </StyledContainer>
 
-      <View style={{padding: 16}} />
+      <View style={{padding: 8}} />
       <TextInput
         label="Quantidade de passes"
-        onChangeText={(text) => console.log(text)}
+        onChangeText={(text) => setPassAmount(text)}
         text="EX: 40"
       />
 
+      <View style={{padding: 8}} />
+
       <ListContainerCardPaymentMethods />
 
-      <View style={{padding: 10}} />
+      <View style={{padding: 8}} />
+
+      <CreditCartContainer />
+
+      <View style={{padding: 8}} />
 
       <StyledContainer
         direction="column"
         justify="space-between"
         color={'white-light'}
         padding={14}>
-        <ContainerPaymentInformation text="Quantidade de passes" value={40} />
+        <ContainerPaymentInformation
+          text="Quantidade de passes"
+          value={passAmount}
+        />
         <View style={{padding: 2}} />
-        <ContainerPaymentInformation text="Valor do passe" value={40} />
+        <ContainerPaymentInformation
+          text="Valor do passe"
+          value={pricePassSingle}
+        />
         <View
           style={{
             padding: 3,
@@ -48,14 +63,15 @@ const PurchasePass = ({navigation}) => {
             borderBottomColor: '#E9F0EB',
           }}
         />
-        <ContainerPaymentInformation text="Valor total" value={52} />
+        <ContainerPaymentInformation
+          text="Valor total"
+          value={passAmount * pricePassSingle}
+        />
       </StyledContainer>
 
-      <View style={{padding: 10}} />
+      <View style={{padding: 16}} />
 
       <Button onPress={() => console.log('exemple')}>Recarregar</Button>
-
-      <ContainerCardPayment />
     </Container>
   );
 };
@@ -72,6 +88,48 @@ const ContainerPaymentInformation = ({text, value}) => {
       <Label variant="body2" color="gray-800">
         {value}
       </Label>
+    </StyledContainer>
+  );
+};
+
+const CreditCartContainer = () => {
+  return (
+    <StyledContainer
+      direction="row"
+      padding={16}
+      color="white-light"
+      radius={6}>
+      <View
+        style={{
+          width: 64,
+          height: 64,
+          backgroundColor: COLORS['green-light'],
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderRadius: 6,
+        }}>
+        <Icon icon={'credit-card-icon'} width={33} height={33} />
+      </View>
+
+      <View style={{padding: 12}} />
+
+      <StyledContainer direction="row">
+        <StyledContainer>
+          <Label variant="body4" color="green-dark">
+            Cartão de crédito Visa
+          </Label>
+          <View style={{padding: 2}} />
+          <Label variant="body2" color="green-dark">
+            1234 5678 9123 4567
+          </Label>
+          <View style={{padding: 2}} />
+          <Label variant="body2" color="green-dark">
+            12/29
+          </Label>
+        </StyledContainer>
+      </StyledContainer>
     </StyledContainer>
   );
 };

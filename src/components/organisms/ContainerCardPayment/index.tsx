@@ -8,14 +8,23 @@ import Button from '../../atoms/Button/Contained';
 import TextInput from '../../atoms/Input';
 import {StyledContainer} from '../../atoms/Container';
 
-export default function ContainerBarCode({visible, onPess}) {
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  closeModalAddCart,
+  closeModalTicket,
+} from '../../../store/modules/pruchase/actions';
+
+export default function ContainerBarCode() {
+  const visible = useSelector((state) => state.purchase.visible_modal_card);
+  const dispatch = useDispatch();
+
   return (
     <View>
       <Modal
-        isVisible={true}
+        isVisible={visible}
         swipeDirection="down"
         style={{margin: 0}}
-        propagateSwipe
+        backdropOpacity={0.3}
         style={{
           justifyContent: 'flex-end',
           margin: 0,
@@ -68,7 +77,9 @@ export default function ContainerBarCode({visible, onPess}) {
 
           <View style={{padding: 10}} />
 
-          <Button onPress={onPess}>Adicionar Cartão</Button>
+          <Button onPress={() => dispatch(closeModalAddCart())}>
+            Adicionar Cartão
+          </Button>
         </View>
       </Modal>
     </View>

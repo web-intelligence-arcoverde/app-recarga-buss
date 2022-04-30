@@ -1,31 +1,38 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View} from 'react-native';
 import {ContainerCardPaymentMethods} from './style';
 import {StyledContainer} from '../../atoms/Container';
 import Icon from '../../atoms/Icon';
 import Label from '../../atoms/Label';
 
-import ContainerBarCode from '../../organisms/ContainerBarCode';
+import ContainerTicketBarCode from '../../organisms/ContainerTicketBarCode/index';
+import ContainerCardPayment from '../../organisms/ContainerCardPayment';
+import ContainerQrCodePix from '../../organisms/ContainerQrCodePix';
+import {useDispatch} from 'react-redux';
+import {
+  openModalAddCart,
+  openModalQrCodePix,
+  openModalTicket,
+} from '../../../store/modules/pruchase/actions';
 
-const CardPaymentMethod = ({
-  icon,
-  text,
-  selected,
-  changerSelected,
-  visibleModal,
-}) => {
-  console.log(visibleModal);
+const CardPaymentMethod = ({icon, text, selected, changerSelected}) => {
+  const dispatch = useDispatch();
 
-  const [isModalVisible, setModalVisible] = useState(false);
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
+  const openModal = () => {
+    if (text === 'PIX') {
+      dispatch(openModalQrCodePix());
+    } else if (text === 'Boleto') {
+      dispatch(openModalTicket());
+    } else if (text === 'Cartão') {
+      dispatch(openModalAddCart());
+    }
   };
 
   return (
     <ContainerCardPaymentMethods
       onPress={() => {
         changerSelected(text);
-        toggleModal();
+        openModal();
       }}>
       <>
         <StyledContainer
@@ -44,16 +51,12 @@ const CardPaymentMethod = ({
           </Label>
         </StyledContainer>
 
-        {visibleModal === true && (
-          <ContainerBarCode visible={isModalVisible} onPess={toggleModal} />
-        )}
+        <ContainerTicketBarCode />
+        <ContainerCardPayment />
+        <ContainerQrCodePix />
       </>
     </ContainerCardPaymentMethods>
   );
-};
-
-CardPaymentMethod.defaultProps = {
-  visibleModal: false,
 };
 
 export default CardPaymentMethod;

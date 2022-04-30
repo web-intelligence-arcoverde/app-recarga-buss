@@ -6,15 +6,20 @@ import Label from '../../atoms/Label';
 import Barcode from '@kichiyaki/react-native-barcode-generator';
 import {Dimensions} from 'react-native';
 import Button from '../../atoms/Button/Contained';
+import {useDispatch, useSelector} from 'react-redux';
+import {closeModalTicket} from '../../../store/modules/pruchase/actions';
 
-export default function ContainerBarCode({visible, onPess}) {
+export default function ContainerBarCode() {
+  const visible = useSelector((state) => state.purchase.visible_modal_ticket);
+  const dispatch = useDispatch();
+
   return (
     <View>
       <Modal
         isVisible={visible}
         swipeDirection="down"
         style={{margin: 0}}
-        propagateSwipe
+        backdropOpacity={0.3}
         style={{
           justifyContent: 'flex-end',
           margin: 0,
@@ -45,7 +50,9 @@ export default function ContainerBarCode({visible, onPess}) {
 
           <View style={{padding: 20}} />
 
-          <Button onPress={onPess}>Copia código</Button>
+          <Button onPress={() => dispatch(closeModalTicket())}>
+            Copia código
+          </Button>
         </View>
       </Modal>
     </View>
