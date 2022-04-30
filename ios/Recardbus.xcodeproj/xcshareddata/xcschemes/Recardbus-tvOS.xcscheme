@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "previsao_tempo-tvOS.app"
-               BlueprintName = "previsao_tempo-tvOS"
-               ReferencedContainer = "container:previsao_tempo.xcodeproj">
+               BuildableName = "Recardbus-tvOS.app"
+               BlueprintName = "Recardbus-tvOS"
+               ReferencedContainer = "container:Recardbus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "previsao_tempo-tvOSTests.xctest"
-               BlueprintName = "previsao_tempo-tvOSTests"
-               ReferencedContainer = "container:previsao_tempo.xcodeproj">
+               BuildableName = "Recardbus-tvOSTests.xctest"
+               BlueprintName = "Recardbus-tvOSTests"
+               ReferencedContainer = "container:Recardbus.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "previsao_tempo-tvOS.app"
-            BlueprintName = "previsao_tempo-tvOS"
-            ReferencedContainer = "container:previsao_tempo.xcodeproj">
+            BuildableName = "Recardbus-tvOS.app"
+            BlueprintName = "Recardbus-tvOS"
+            ReferencedContainer = "container:Recardbus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "previsao_tempo-tvOS.app"
-            BlueprintName = "previsao_tempo-tvOS"
-            ReferencedContainer = "container:previsao_tempo.xcodeproj">
+            BuildableName = "Recardbus-tvOS.app"
+            BlueprintName = "Recardbus-tvOS"
+            ReferencedContainer = "container:Recardbus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
