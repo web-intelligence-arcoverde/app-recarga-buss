@@ -48,7 +48,7 @@ function SignIn({navigation}) {
 
   return (
     <Container justify="center" align="center" padding={30}>
-      <Label color="green-dark">Recardbus</Label>
+      <Label color="green-dark">Recargabus</Label>
 
       <View style={{padding: 26}} />
 
