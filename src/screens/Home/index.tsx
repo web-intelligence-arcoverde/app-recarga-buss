@@ -12,7 +12,7 @@ function Home({navigation}) {
 
   return (
     <LinearGradientContainer justify="center" align="center">
-      <Label color="white-default">Recargabus</Label>
+      <Label color="white-default">Recargabuss</Label>
     </LinearGradientContainer>
   );
 }
