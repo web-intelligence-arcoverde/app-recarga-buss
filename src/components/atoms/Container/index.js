@@ -29,8 +29,7 @@ export const Container = styled.KeyboardAvoidingView`
 `;
 
 export const LinearGradientContainer = styled(LinearGradient).attrs({
-  useAngle: true,
-  angle: 169,
+  start: {x: 0.7, y: 0},
   colors: ['#4EA45D', '#2D5E35'],
 })`
   flex: 1;
