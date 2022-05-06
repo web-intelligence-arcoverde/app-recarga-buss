@@ -4,7 +4,7 @@ import Label from '../../components/atoms/Label';
 import {LinearGradientContainer} from '../../components/atoms/Container';
 
 function Home({navigation}) {
-  //const myTimeout = setTimeout(myGreeting, 5000);
+  const myTimeout = setTimeout(myGreeting, 5000);
 
   function myGreeting() {
     navigation.navigate('SignIn');

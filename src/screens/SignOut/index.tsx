@@ -12,7 +12,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {closeModalSignOut} from '../../store/modules/navigation/actions';
 
 export default function SignOut({navigation}) {
-  console.log(navigation);
   const signOutVisible = useSelector(
     (state) => state.navigation.visible_modal_leave,
   );
